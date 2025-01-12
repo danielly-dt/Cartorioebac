@@ -67,7 +67,7 @@ int consulta()//função consultar dados usuarios
 	char cpf[40];
 	char conteudo[200];
 	
-	printf("digite o cpf a ser consultado");//função que pede o dado do usuario
+	printf("digite o cpf a ser consultado:");//função que pede o dado do usuario
 	scanf("%s", cpf); //funão arquivo string, nesse caso o cpf
 	
 	FILE *file; //função buscar arquivo
@@ -80,8 +80,8 @@ int consulta()//função consultar dados usuarios
 		
 	while(fgets(conteudo, 200, file) != NULL)//laço de repeticão(enquanto)buscar no arq.conteudo os 200caract	
 	{
-		printf("\n Essas são as informações do usuário"); //salvando conteudo da variavel
-		printf("%s", conteudo);//salva contundo na string
+		printf("\n Essas são as informações do usuário:"); //salvando conteudo da variavel
+		printf("%s", conteudo);//salva conteundo na string
 		printf("\n\n");
 	}
 	
@@ -104,7 +104,7 @@ int deletar()//função para deletar usuario
 	
 	if(file == NULL)
 	{
-		printf("o usuário não se encontra no siatema!.\n");
+		printf("o usuário não se encontra no sistema!.\n");
 		system ("pause");
 		
 	}
@@ -130,6 +130,7 @@ int main()
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
 		printf("\t3 - Deletar nomes\n\n"); 
+		printf("\t4 - Sair do sistema. \n\n"); 
 		printf("Opção: ");//fim do menu
 				
 		scanf("%d", &opcao); //armazenando a escolha do usuário.
@@ -148,6 +149,11 @@ int main()
 		
 			case 3:
 			deletar();
+			break;
+			
+			case 4:
+			printf("Obrigada por utlizar os sistema!\n");
+			return 0;
 			break;
 		
 			default:
